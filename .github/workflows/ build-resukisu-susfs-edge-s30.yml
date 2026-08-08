@@ -1,4 +1,4 @@
-name: Build ReSukiSU+SUSFS boot.img (xpeng) - Enhanced
+name: Build ver2 ReSukiSU+SUSFS boot.img (xpeng) - Enhanced
 
 "on":
   workflow_dispatch:
@@ -103,6 +103,8 @@ jobs:
           DEVICE: xpeng
           CLANG_VERSION: clang-r563880c
           UPDATE_RESUKISU: ${{ inputs.update_resukisu }}
+          KERNEL_URL: https://github.com/LuoJuly/android_kernel_motorola_sm7325.git
+          KERNEL_BRANCH: lineage-23.2-SUSFS
         run: |
           mkdir -p scripts/ci
           cp -f "${GITHUB_WORKSPACE}/scripts/ci/"*.sh scripts/ci/
